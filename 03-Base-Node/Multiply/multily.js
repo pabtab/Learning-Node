@@ -1,12 +1,19 @@
 const fs = require('fs')
 
-const createFile = (base) => {
+
+const listNumbers = (base, limit) => {
+  for (let index = 0; index <= limit; index++) {
+    console.log(`${base} * ${index} = ${base * index}\n`)
+  }
+}
+
+const createFile = (base, limit) => {
  return new Promise((resolve, reject) => {
    let data = '';
 
    if (!Number(base)) reject('Not number')
    
-   for (let index = 0; index < 10; index++) {
+   for (let index = 0; index <= limit; index++) {
      data += `${base} * ${index} = ${base * index}\n`
    }
    
@@ -21,5 +28,6 @@ const createFile = (base) => {
 }
 
 module.exports = {
+  listNumbers,
   createFile
 }
