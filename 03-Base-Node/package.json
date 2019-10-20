@@ -1,0 +1,14 @@
+{
+  "name": "03-base-node",
+  "version": "1.0.0",
+  "description": "Bases node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pabtab",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^14.2.0"
+  }
+}
