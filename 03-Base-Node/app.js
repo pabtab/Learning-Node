@@ -18,7 +18,7 @@ switch (independentCmd) {
   case 'create':
 
     createFile(argv.base, argv.limit)
-      .then(file => console.log(`File created: ${file}`))
+      .then(file => console.log(`File created: ${file}`.magenta))
       .catch(e => console.log(e))
     break;
 

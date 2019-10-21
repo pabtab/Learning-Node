@@ -1,7 +1,12 @@
 const fs = require('fs')
+const colors = require('colors');
 
 
 const listNumbers = (base, limit) => {
+  console.log('====================='.green)
+  console.log(`====== Table ${base} ========`.green)  
+  console.log('====================='.green)
+
   for (let index = 0; index <= limit; index++) {
     console.log(`${base} * ${index} = ${base * index}\n`)
   }
