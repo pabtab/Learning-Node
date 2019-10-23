@@ -6,6 +6,18 @@ app.use(express.static(__dirname + '/public'))
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs')
+
+hbs.registerHelper('getYear', () => {
+  return new Date().getFullYear()
+})
+
+hbs.registerHelper('capitalize', (text) => {
+  let word = text.split(' ')
+  word.forEach((element, i) => {
+    word[i] = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
+  });
+  return word.join(' ')
+})
 /* app.get('/', function (req, res) {
   const response = {
     name: 'pabtab',
@@ -19,16 +31,13 @@ app.set('view engine', 'hbs')
 app.get('/', function (req, res) {
 
   res.render('home', {
-    name: 'Pabtab',
-    year: new Date().getFullYear()
+    name: 'pabtab pablo',
   });
 })
 
 app.get('/about', function (req, res) {
 
-  res.render('about', {
-    year: new Date().getFullYear()
-  });
+  res.render('about');
 })
 
 
